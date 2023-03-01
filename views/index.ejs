@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Danh sách Sinh viên</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>Danh sách sinh viên</h1>
+    <a href="/form-add"><button>Thêm lớp</button></a><br>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>MaSV</th>
+            <th>NgaySinh</th>
+            <th>gioitinh</th>
+            <th>quequan</th>
+            <th>Action</th>
+        </tr>
+        <% sinhviens.forEach(item => { %>
+            <tr>
+                <td>
+                    <%= item._id %>
+                </td>
+                <td>
+                    <%= item.MaSV %>
+                </td>
+                <td>
+                    <%= item.Ngaysinh %>
+                </td>
+                <td>
+                    <%= item.gioitinh %>
+                </td>
+                <td>
+                    <%= item.quequan %>
+                </td>
+                <td><a href="/form-update/<%= item._id %>">Update</a>||<a href="/form-Delete/<%= item._id %>">Delete</a></td>
+            </tr>
+            <% })%>
+    </table>
+
+</body>
+
+</html>
